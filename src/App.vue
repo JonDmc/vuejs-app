@@ -29,7 +29,7 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 </style> -->
 
-<script setup>
+<!-- <script setup>
 import { computed, reactive, ref } from 'vue';
 
 // const name = ref('Jon')
@@ -49,6 +49,24 @@ const greetings = computed(() => {
 
 <template>
   <input type="text" v-model="data.name" />
-  <!-- <h1>Hello, {{ name }}</h1> -->
   <h1>{{ greetings }}</h1>
+</template> -->
+
+<script setup>
+import AvailableBalance from './components/AvailableBalance.vue'
+import ServiceButton from './components/ServiceButton.vue'
+</script>
+
+<template>
+  <div>
+    <AvailableBalance />
+    <div>
+      <ServiceButton icon-name="Send" />
+      <!-- <ServiceButton>Send</ServiceButton> -->
+      <button>Send</button>
+      <button>Load</button>
+      <button>Transfer</button>
+      <button>Bills</button>
+    </div>
+  </div>
 </template>
