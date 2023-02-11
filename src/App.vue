@@ -61,12 +61,10 @@ import ServiceButton from './components/ServiceButton.vue'
   <div>
     <AvailableBalance />
     <div>
-      <ServiceButton icon-name="Send" />
-      <!-- <ServiceButton>Send</ServiceButton> -->
-      <button>Send</button>
-      <button>Load</button>
-      <button>Transfer</button>
-      <button>Bills</button>
+      <ServiceButton icon="💰">Send</ServiceButton>
+      <ServiceButton icon="👓">Load</ServiceButton>
+      <ServiceButton icon="✅">Transfer</ServiceButton>
+      <ServiceButton icon="💲">Bills</ServiceButton>
     </div>
   </div>
 </template>

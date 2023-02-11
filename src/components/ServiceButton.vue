@@ -2,15 +2,19 @@
 import { defineProps } from 'vue';
 
 const props = defineProps({
-    iconName: String
+    icon: String
 })
 
 </script>
 
 <template>
     <div>
-        <span>💰</span>
-        <button>{{ props.iconName }}</button>
+        <span>
+            {{ props.icon }}
+        </span>
+        <button>
+            <slot />
+        </button>
     </div>
 </template>
 
