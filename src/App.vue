@@ -30,13 +30,25 @@ import HelloWorld from './components/HelloWorld.vue'
 </style> -->
 
 <script setup>
-import { ref } from 'vue';
+import { computed, reactive, ref } from 'vue';
 
-const name = ref('Jon')
-const greetings = `Hello, ${name}`
+// const name = ref('Jon')
+const data = reactive({
+  name: 'Jon'
+})
+console.log(data)
+
+const greetings = computed(() => {
+  console.log(data.name)
+  if (!data.name.length) {
+    return 'Who are you?'
+  }
+  return `Hello ${data.name}`
+})
 </script>
 
 <template>
-  <input type="text" v-model="name" />
-  <h1>Hello, {{ name }}</h1>
+  <input type="text" v-model="data.name" />
+  <!-- <h1>Hello, {{ name }}</h1> -->
+  <h1>{{ greetings }}</h1>
 </template>
