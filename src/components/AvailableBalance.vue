@@ -1,8 +1,30 @@
+<script setup>
+import { ref } from 'vue'
+
+const balance = ref(0)
+
+const getBalance = async () => {
+    const response = await fetch('https://api.m3o.com/v1/wallet/Balance', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            Authorization: 'Bearer ZTViNDk3NjktMjYxNi00ZGI4LThlYWUtMWFhMjgwOTZjNTdm'
+        },
+        body: JSON.stringify({
+            id: '09123456789',
+        }),
+    }).then((response) => response.json())
+
+    balance.value = response.balance
+}
+getBalance()
+</script>
+
 <template>
     <div class="container">
         <header>Available Balance</header>
         <div class="values">
-            <p>PHP 2000</p>
+            <p>PHP {{ balance }}</p>
             <button>+ Cash In</button>
         </div>
     </div>

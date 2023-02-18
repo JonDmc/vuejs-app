@@ -1,6 +1,6 @@
 <script setup>
-import AvailableBalance from './components/AvailableBalance.vue';
-import ServiceButton from './components/ServiceButton.vue';
+import AvailableBalance from '../components/AvailableBalance.vue';
+import ServiceButton from '../components/ServiceButton.vue';
 </script>
 
 <template>
