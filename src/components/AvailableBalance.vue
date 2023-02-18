@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { onMounted, ref } from 'vue'
 
 const balance = ref(0)
 
@@ -17,7 +17,10 @@ const getBalance = async () => {
 
     balance.value = response.balance
 }
-getBalance()
+
+onMounted(async () => {
+    await getBalance()
+})
 </script>
 
 <template>
@@ -25,7 +28,7 @@ getBalance()
         <header>Available Balance</header>
         <div class="values">
             <p>PHP {{ balance }}</p>
-            <button>+ Cash In</button>
+            <router-link to="/cash-in">+ Cash In</router-link>
         </div>
     </div>
 </template>
@@ -55,12 +58,13 @@ p {
     margin: 0;
 }
 
-button {
+a {
     padding: 0.5rem 1rem;
     border-radius: 3rem;
     background-color: #fff;
     color: var(--primary-color);
     font-weight: 600;
     border: 0;
+    text-decoration: none;
 }
 </style>
